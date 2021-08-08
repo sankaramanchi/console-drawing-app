@@ -1,0 +1,9 @@
+com/ganeshkumar/personal/console_drawing/entity/LineTest.class
+com/ganeshkumar/personal/console_drawing/entity/ColourFillerTest.class
+com/ganeshkumar/personal/console_drawing/command/DrawingCommandTest.class
+com/ganeshkumar/personal/console_drawing/command/CommandFactoryTest.class
+com/ganeshkumar/personal/console_drawing/entity/RectangleTest.class
+com/ganeshkumar/personal/console_drawing/entity/CanvasTest.class
+com/ganeshkumar/personal/console_drawing/command/BucketFillCommandTest.class
+com/ganeshkumar/personal/console_drawing/command/CreateCanvasCommandTest.class
+com/ganeshkumar/personal/console_drawing/entity/PointTest.class
