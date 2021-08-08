@@ -21,41 +21,40 @@ import com.ganeshkumar.personal.console_drawing.exception.InvalidCommandExceptio
  */
 
 public class ConsoleDrawingApplication {
-	
+
 	private static Scanner scanner;
 	private static CommandFactory commandFactory;
 	private static Canvas canvas;
-	
+
     public static void main( String[] args ) {
     	scanner = new Scanner(System.in);
     	commandFactory = new CommandFactory();
-    	
+
     	System.out.println("enter command: ");
 		while (true) {
 			processCommand(scanner.nextLine().trim());
 			System.out.println("\nenter command: ");
         }
     }
-    
+
     public static void processCommand(String givenCommand) {
     	Command command = null;
     	try {
     		command = commandFactory.getCommand(givenCommand);
-    		if (command instanceof QuitCommand) {
-        		if(scanner != null)
-            		scanner.close();
+    		if (command instanceof QuitCommand) {        		
+            scanner.close();
         		command.execute();
             }
     		if (command instanceof CreateCanvasCommand) {
         		command.execute();
         		canvas = ((CreateCanvasCommand) command).getCanvas();
             }
-    		
+
     		if (command instanceof DrawringCommand) {
     			Shape shape = ((DrawringCommand) command).getShape();
     			canvas = shape.draw(canvas);
             }
-    		
+
     		if (command instanceof BucketFillCommand) {
     			command.execute();
     			ColourFiller colourFiller = ((BucketFillCommand) command).getColourFiller();
